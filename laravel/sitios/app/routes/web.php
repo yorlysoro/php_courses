@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PortfolioController;
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return "Hola desde la pagina";
 });
 
@@ -20,12 +21,15 @@ Route::get('saludo/{nombre?}', function($nombre='invitado'){
 
 Route::get('contactanos', function(){
     return "Seccion de contactos";
-})->name('contactos');
+})->name('contactos');*/
 
-Route::get('/', function(){
-    echo "<a href='". route('contactos') ."'>Contactos 1</a>";
-    echo "<a href='". route('contactos') ."'>Contactos 2</a>";
-    echo "<a href='". route('contactos') ."'>Contactos 3</a>";
-    echo "<a href='". route('contactos') ."'>Contactos 4</a>";
-    echo "<a href='". route('contactos') ."'>Contactos 5</a>";
-});
+/*Route::get('/', function(){
+    $nombre = 'Jorge';
+    return view('home')->with(['nombre' => $nombre]);
+})->name('home');*/
+
+Route::view('/', 'home', ['nombre' => 'Jorge'])->name('home');
+Route::view('/about', 'about')->name('about');
+Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+Route::view('/contact', 'contact')->name('contact');
+
