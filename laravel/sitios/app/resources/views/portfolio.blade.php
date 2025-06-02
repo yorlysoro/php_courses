@@ -3,7 +3,7 @@
 @section('title', 'Portfolio')
 
 @section('content')
-    <h1>Portafolio</h1>
+    <h1>{{ __('portfolio') }}</h1>
 
     <ul>
         @forelse ($portfolio as $portfolioItem)

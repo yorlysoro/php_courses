@@ -1,16 +1,16 @@
 <nav>
     <ul>
         <li class="{{ setActive('home') }}">
-            <a href="/">Home</a>
+            <a href="/">{{ __('Home') }}</a>
         </li>
         <li class="{{ setActive('about') }}">
-            <a href="/about">About</a>
+            <a href="/about">{{ __('About') }}</a>
         </li>
         <li class="{{ setActive('portfolio') }}">
-            <a href="/portfolio">Portafolio</a>
+            <a href="/portfolio">{{ __('Portfolio') }}</a>
         </li>
         <li class="{{ setActive('contact') }}">
-            <a href="/contact">Contacto</a>
+            <a href="/contact">{{ __('Contact') }}</a>
         </li>
     </ul>
 </nav>
